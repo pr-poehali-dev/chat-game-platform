@@ -68,51 +68,14 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex">
-      <aside className="w-20 bg-card border-r border-border flex flex-col items-center py-6 space-y-6">
+    <div className="min-h-screen bg-background flex flex-col">
+      <header className="h-16 bg-card border-b border-border flex items-center justify-center px-6">
         <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-2xl animate-pulse-glow">
           🚀
         </div>
-        
-        <nav className="flex-1 flex flex-col items-center space-y-4">
-          <Button
-            variant={activeTab === 'chat' ? 'default' : 'ghost'}
-            size="icon"
-            onClick={() => setActiveTab('chat')}
-            className="w-12 h-12 rounded-xl transition-all hover:scale-110"
-          >
-            <Icon name="MessageSquare" size={24} />
-          </Button>
-          
-          <Button
-            variant={activeTab === 'games' ? 'default' : 'ghost'}
-            size="icon"
-            onClick={() => setActiveTab('games')}
-            className="w-12 h-12 rounded-xl transition-all hover:scale-110"
-          >
-            <Icon name="Gamepad2" size={24} />
-          </Button>
-          
-          <Button
-            variant={activeTab === 'profile' ? 'default' : 'ghost'}
-            size="icon"
-            onClick={() => setActiveTab('profile')}
-            className="w-12 h-12 rounded-xl transition-all hover:scale-110"
-          >
-            <Icon name="User" size={24} />
-          </Button>
-        </nav>
+      </header>
 
-        <Button
-          variant="ghost"
-          size="icon"
-          className="w-12 h-12 rounded-xl transition-all hover:scale-110"
-        >
-          <Icon name="Settings" size={24} />
-        </Button>
-      </aside>
-
-      <main className="flex-1 flex">
+      <main className="flex-1 flex overflow-hidden">
         {activeTab === 'chat' && (
           <>
             <section className="flex-1 flex flex-col">
@@ -312,6 +275,45 @@ const Index = () => {
           </section>
         )}
       </main>
+
+      <nav className="h-20 bg-card border-t border-border flex items-center justify-center px-6">
+        <div className="flex items-center space-x-4">
+          <Button
+            variant={activeTab === 'chat' ? 'default' : 'ghost'}
+            size="icon"
+            onClick={() => setActiveTab('chat')}
+            className="w-14 h-14 rounded-xl transition-all hover:scale-110"
+          >
+            <Icon name="MessageSquare" size={24} />
+          </Button>
+          
+          <Button
+            variant={activeTab === 'games' ? 'default' : 'ghost'}
+            size="icon"
+            onClick={() => setActiveTab('games')}
+            className="w-14 h-14 rounded-xl transition-all hover:scale-110"
+          >
+            <Icon name="Gamepad2" size={24} />
+          </Button>
+          
+          <Button
+            variant={activeTab === 'profile' ? 'default' : 'ghost'}
+            size="icon"
+            onClick={() => setActiveTab('profile')}
+            className="w-14 h-14 rounded-xl transition-all hover:scale-110"
+          >
+            <Icon name="User" size={24} />
+          </Button>
+
+          <Button
+            variant="ghost"
+            size="icon"
+            className="w-14 h-14 rounded-xl transition-all hover:scale-110"
+          >
+            <Icon name="Settings" size={24} />
+          </Button>
+        </div>
+      </nav>
     </div>
   );
 };
