@@ -216,32 +216,32 @@ const Index = () => {
         )}
 
         {activeTab === 'games' && (
-          <section className="flex-1 p-8 overflow-y-auto">
-            <div className="max-w-7xl mx-auto">
-              <header className="mb-10">
+          <section className="flex-1 p-6 overflow-y-auto">
+            <div className="max-w-full mx-auto">
+              <header className="mb-6">
                 <h1 className="text-5xl font-bold mb-3 glow-text">Игровая комната</h1>
                 <p className="text-lg text-muted-foreground">Выбери игру и начни играть с друзьями</p>
               </header>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
                 {games.map((game) => (
                   <Card
                     key={game.id}
-                    className="p-8 bg-card hover:bg-muted/50 border-2 border-border hover:border-primary/50 transition-all cursor-pointer group hover:scale-105 hover:glow-effect"
+                    className="p-4 bg-card hover:bg-muted/50 border-2 border-border hover:border-primary/50 transition-all cursor-pointer group hover:scale-105 hover:glow-effect"
                   >
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="text-6xl">{game.icon}</div>
-                      <Badge variant="secondary" className="text-sm px-3 py-1">
-                        <Icon name="Users" size={14} className="mr-1" />
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="text-4xl">{game.icon}</div>
+                      <Badge variant="secondary" className="text-xs px-2 py-0.5">
+                        <Icon name="Users" size={10} className="mr-0.5" />
                         {game.players}
                       </Badge>
                     </div>
-                    <h3 className="text-2xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                    <h3 className="text-base font-semibold mb-2 group-hover:text-primary transition-colors truncate">
                       {game.title}
                     </h3>
-                    <Button className="w-full mt-6 h-12 text-lg bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all">
+                    <Button className="w-full mt-2 h-9 text-sm bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all">
                       Играть
-                      <Icon name="Play" size={18} className="ml-2" />
+                      <Icon name="Play" size={14} className="ml-1" />
                     </Button>
                   </Card>
                 ))}
