@@ -50,12 +50,15 @@ const Index = () => {
   ];
 
   const games: Game[] = [
-    { id: 1, title: 'Battle Royale', players: 1247, icon: '🎯' },
-    { id: 2, title: 'MMO Quest', players: 892, icon: '⚔️' },
-    { id: 3, title: 'Racing Pro', players: 654, icon: '🏎️' },
-    { id: 4, title: 'Chess Master', players: 423, icon: '♟️' },
-    { id: 5, title: 'Card Battle', players: 356, icon: '🃏' },
-    { id: 6, title: 'Puzzle Party', players: 289, icon: '🧩' },
+    { id: 1, title: 'Minecraft', players: 2847, icon: '⛏️' },
+    { id: 2, title: 'Standoff 2', players: 1923, icon: '🔫' },
+    { id: 3, title: 'Роблокс', players: 3156, icon: '🎮' },
+    { id: 4, title: 'Battle Royale', players: 1247, icon: '🎯' },
+    { id: 5, title: 'MMO Quest', players: 892, icon: '⚔️' },
+    { id: 6, title: 'Racing Pro', players: 654, icon: '🏎️' },
+    { id: 7, title: 'Chess Master', players: 423, icon: '♟️' },
+    { id: 8, title: 'Card Battle', players: 356, icon: '🃏' },
+    { id: 9, title: 'Puzzle Party', players: 289, icon: '🧩' },
   ];
 
   const handleSendMessage = () => {
@@ -213,32 +216,32 @@ const Index = () => {
         )}
 
         {activeTab === 'games' && (
-          <section className="flex-1 p-8">
-            <div className="max-w-5xl mx-auto">
-              <header className="mb-8">
-                <h1 className="text-4xl font-bold mb-2 glow-text">Игровая комната</h1>
-                <p className="text-muted-foreground">Выбери игру и начни играть с друзьями</p>
+          <section className="flex-1 p-8 overflow-y-auto">
+            <div className="max-w-7xl mx-auto">
+              <header className="mb-10">
+                <h1 className="text-5xl font-bold mb-3 glow-text">Игровая комната</h1>
+                <p className="text-lg text-muted-foreground">Выбери игру и начни играть с друзьями</p>
               </header>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {games.map((game) => (
                   <Card
                     key={game.id}
-                    className="p-6 bg-card hover:bg-muted/50 border-2 border-border hover:border-primary/50 transition-all cursor-pointer group hover:scale-105 hover:glow-effect"
+                    className="p-8 bg-card hover:bg-muted/50 border-2 border-border hover:border-primary/50 transition-all cursor-pointer group hover:scale-105 hover:glow-effect"
                   >
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="text-5xl">{game.icon}</div>
-                      <Badge variant="secondary" className="text-xs">
-                        <Icon name="Users" size={12} className="mr-1" />
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="text-6xl">{game.icon}</div>
+                      <Badge variant="secondary" className="text-sm px-3 py-1">
+                        <Icon name="Users" size={14} className="mr-1" />
                         {game.players}
                       </Badge>
                     </div>
-                    <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                    <h3 className="text-2xl font-semibold mb-3 group-hover:text-primary transition-colors">
                       {game.title}
                     </h3>
-                    <Button className="w-full mt-4 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all">
+                    <Button className="w-full mt-6 h-12 text-lg bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all">
                       Играть
-                      <Icon name="Play" size={16} className="ml-2" />
+                      <Icon name="Play" size={18} className="ml-2" />
                     </Button>
                   </Card>
                 ))}
