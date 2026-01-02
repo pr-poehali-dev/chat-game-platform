@@ -277,16 +277,7 @@ const Index = () => {
       </main>
 
       <nav className="h-20 bg-card border-t border-border flex items-center justify-center px-6">
-        <div className="flex items-center space-x-4">
-          <Button
-            variant={activeTab === 'chat' ? 'default' : 'ghost'}
-            size="icon"
-            onClick={() => setActiveTab('chat')}
-            className="w-14 h-14 rounded-xl transition-all hover:scale-110"
-          >
-            <Icon name="MessageSquare" size={24} />
-          </Button>
-          
+        <div className="flex items-center justify-between w-full max-w-2xl">
           <Button
             variant={activeTab === 'games' ? 'default' : 'ghost'}
             size="icon"
@@ -303,6 +294,23 @@ const Index = () => {
             className="w-14 h-14 rounded-xl transition-all hover:scale-110"
           >
             <Icon name="User" size={24} />
+          </Button>
+
+          <Button
+            variant={activeTab === 'chat' ? 'default' : 'ghost'}
+            size="icon"
+            onClick={() => setActiveTab('chat')}
+            className="w-16 h-16 rounded-full transition-all hover:scale-110 bg-gradient-to-r from-primary to-secondary"
+          >
+            <Icon name="MessageSquare" size={26} />
+          </Button>
+          
+          <Button
+            variant="ghost"
+            size="icon"
+            className="w-14 h-14 rounded-xl transition-all hover:scale-110"
+          >
+            <Icon name="Home" size={24} />
           </Button>
 
           <Button
